@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include <string>
+/*#include <string>*/
 
 template <typename dataType>
 class Matrix{
@@ -10,7 +10,7 @@ private:
     dataType **data;
 public:
     Matrix(int rows,int cols,dataType** curData){
-        std::cout<<"Конструктор \n";
+        std::cout<<"Constructor \n";
         Nr=rows;
         Mc=cols;
         int curRow=0;
@@ -24,11 +24,11 @@ public:
         }
     }
     ~Matrix(){
-        for (int i=0;i<this->Nr;i++){
-            delete[] this->data[i];
+        for (int i=0;i<Nr;i++){
+            delete[] data[i];
         }
-        delete[] this->data;
-        std::cout<<"Деструктор\n";
+        delete[] data;
+        std::cout<<"Destructor\n";
     }
     Matrix(const Matrix &other){
         Nr=other.Nr;
